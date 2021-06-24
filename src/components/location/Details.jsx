@@ -6,7 +6,7 @@ const LocationDetails = (props) => {
         <div className="col-md">
             <div className="row m-2">
                 <div className="col-2 ml-0 mr-md-3">
-                    <Avatar size={50} style={{backgroundColor: '#d5ebcc'}}>
+                    <Avatar size={47} style={{backgroundColor: '#d5ebcc'}}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#5c8a4a"
                              className="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                             <path
@@ -23,7 +23,7 @@ const LocationDetails = (props) => {
             </div>
             <div className="row m-2">
                 <div className="col-2 ml-0  mr-md-3">
-                    <Avatar size={50} style={{backgroundColor: '#d5ebcc'}}>
+                    <Avatar size={47} style={{backgroundColor: '#d5ebcc'}}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#5c8a4a"
                              className="bi bi-envelope-fill" viewBox="0 0 16 16">
                             <path
@@ -40,7 +40,7 @@ const LocationDetails = (props) => {
             </div>
             <div className="row m-2">
                 <div className="col-2 ml-0 mr-md-3">
-                    <Avatar size={50} style={{backgroundColor: '#d5ebcc'}}>
+                    <Avatar size={47} style={{backgroundColor: '#d5ebcc'}}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#5c8a4a"
                              className="bi bi-telephone-fill" viewBox="0 0 16 16">
                             <path fillRule="evenodd"
