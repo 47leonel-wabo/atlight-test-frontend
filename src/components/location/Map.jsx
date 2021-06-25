@@ -7,7 +7,7 @@ const AppMap = props => {
 
     const mapContainerStyle = {
         width: '100%',
-        height: '350px',
+        height: '360px',
         borderRadius: '10px'
     }
 
