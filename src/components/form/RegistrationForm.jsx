@@ -27,7 +27,7 @@ const RegistrationForm = (props) => (
             {({isSubmitting}) => (
 
                 <Form>
-                    <div className="form-row">
+                    <div className="form-row mt-2">
                         <div className="form-group col-md-6">
                             <label htmlFor="name">Your Name</label>
                             <Field type="text" className="form-control" id="name" name="name"/>
@@ -37,13 +37,13 @@ const RegistrationForm = (props) => (
                             <Field type="email" className="form-control" id="email" name="email"/>
                         </div>
                     </div>
-                    <div className="row">
+                    <div className="row mt-2">
                         <div className="form-group col">
                             <label htmlFor="subject">Subject</label>
                             <Field type="text" className="form-control" id="subject" name="subject"/>
                         </div>
                     </div>
-                    <div className="row">
+                    <div className="row mt-3">
                         <div className="form-group col">
                             <label htmlFor="message">Message</label>
                             <Field as="textarea" style={{height: '200px'}} type="text" className="form-control" id="message" name="message"/>
