@@ -14,3 +14,4 @@ Skill test validation with [React Js](https://github.com/facebook/create-react-a
 
 ## Credit 
 Happy coding 🔥, feel free!
+Deployed on Heroku
