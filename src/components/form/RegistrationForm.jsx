@@ -2,6 +2,8 @@ import React from 'react'
 import {Field, Form, Formik} from "formik";
 import {Tag} from 'antd'
 import './formStyle.css'
+import BackendService from "../../service/client/BackendService";
+import AppNotification from "../../service/notification/AppNotification";
 
 const tagColor = "#9cb30c"
 
@@ -40,8 +42,31 @@ const RegistrationForm = (props) => (
                 return errors;
             }}
             onSubmit={(values, {setSubmitting}) => {
-                    setSubmitting(false);
-                    console.log(values)
+                setSubmitting(false);
+                BackendService.addMessage(values)
+                    .then(response => {
+                        AppNotification.successOperation("Message saved", "New record successfully recorded")
+                        console.log(response.data)
+                        if (response.data) {
+                            // Once request executed successfully
+                            BackendService.countRecords()
+                                .then(response => {
+                                    // Notify user
+                                    AppNotification.infoOperation(
+                                        "Number of records",
+                                        response.data + " Records")
+                                })
+                                .catch(error => console.log(error))
+                        }
+                    })
+                    .catch(error => {
+                        if (error.response) {
+                            AppNotification.errorOperation(
+                                error.response.data.httpStatus,
+                                error.response.data.message
+                            )
+                        }
+                    })
             }}
         >
             {({
@@ -65,8 +90,6 @@ const RegistrationForm = (props) => (
                                 className="form-control"
                                 id="name"
                                 name="name"/>
-                            {/*{errors.name && touched.name && (<Tooltip color="#f50">{errors.name}</Tooltip>)}*/}
-                            {/*<ErrorMessage name="name" />*/}
                             {errors.name && touched.name && (
                                 <Tag color={tagColor} style={{marginTop: '2px'}}>
                                     {errors.name}
@@ -127,12 +150,8 @@ const RegistrationForm = (props) => (
                             Send Message
                         </button>
                     </div>
-
-
                 </Form>
-
             )}
-
         </Formik>
     </div>
 )

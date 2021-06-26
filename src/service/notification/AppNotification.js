@@ -18,6 +18,14 @@ class AppNotification {
             placement: "topRight",
         });
     };
+
+    infoOperation = (message, description) => {
+        notification.info({
+            message,
+            description,
+            placement: "topRight",
+        });
+    };
 }
 
 export default new AppNotification();
